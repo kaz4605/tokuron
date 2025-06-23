@@ -9,6 +9,7 @@
     "@hono/swagger-ui": "^0.5.1",
     "@hono/zod-openapi": "^0.19.8",
     "@hono/zod-validator": "^0.7.0",
+    "bcryptjs": "^3.0.2",
     "hono": "^4.7.11",
     "zod": "^3.25.49"
   },
