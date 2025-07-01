@@ -2,7 +2,7 @@ export type Email = `${string}@${string}.${string}`;
 
 export interface DBEntity {
     id: string;
-    createAt: Date;
+    createdAt: Date;
     updatedAt: Date;
 }
 
