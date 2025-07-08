@@ -148,7 +148,7 @@ async update(id: string, data: Partial<DBChat>): Promise<DBChat | null> {
   const updateData = Object.entries(data)
     .filter(([_, value]) => value !== undefined)
     .reduce((acc, [key, value]) => {
-      acc[key as keyof DBUser] = value;
+      acc[key as keyof DBChat] = value;
       return acc;
     }, {} as Record<string, any>);
 
