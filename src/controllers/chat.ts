@@ -58,7 +58,7 @@ const response = await generateMessageResponse(allMessage, c.env.GITHUB_TOKEN);
 const responseMessage: DBCreateMessage = {
   message: response,
   chatId,
-  type: "user",
+  type: "assistant",
 };
 
     const data = await messageResource.create(responseMessage);

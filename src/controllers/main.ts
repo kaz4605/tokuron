@@ -1,6 +1,7 @@
 import { Hono } from "hono";
+import { cors } from 'hono/cors'
 import type { ContextVariables } from "../constants";
-import { API_PREFIX } from "../constants";
+import { API_PREFIX ,CLIENT_ORIGIN} from "../constants";
 import { attachUserId, checkJWTAuth } from "../middlewares/auth";
 import { AUTH_PREFIX, createAuthApp } from "./auth";
 import { CHAT_PREFIX, createChatApp } from "./chat";
@@ -11,7 +12,7 @@ export function createMainApp(
   chatApp: Hono<ContextVariables>,
 ) {
   const app = new Hono<ContextVariables>().basePath(API_PREFIX);
-
+　app.use("*", cors({origin: CLIENT_ORIGIN}));
   app.use("*", checkJWTAuth);
   app.use("*", attachUserId);
   app.route(AUTH_PREFIX, authApp);
